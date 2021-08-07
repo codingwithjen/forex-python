@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h1>Forex Converter</h1>
+    {% block error %}{% endblock %}
+    <form action="{{ url_for('convert_currency') }}" method="post">
+        <label for="from-curr">CONVERTING FROM:</label>
+        <input type="text" name="from-curr" id="from-curr">
+
+        <label for="to-curr">CONVERTING TO:</label>
+        <input type="text" name="to-curr" id="to-curr">
+
+        <label for="amount">AMOUNT:</label>
+        <input type="text" name="amount" id="amount">
+
+        <input type="submit" value="CONVERT!">
+    </form>
+</div>
+{% endblock %}
